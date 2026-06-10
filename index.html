@@ -21,7 +21,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            min-hight: 100vh;
+            min-height: 100vh;
         }
 
         header {
@@ -42,7 +42,6 @@
             box-sizing: border-box;
         }
 
-        /* Système d'onglets dynamiques */
         .tabs {
             display: flex;
             justify-content: center;
@@ -73,7 +72,6 @@
             border-color: var(--accent-color);
         }
 
-        /* Contenu des compétences */
         .comp-content {
             display: none;
             background-color: var(--bg-card);
@@ -126,7 +124,6 @@
             margin: 0;
         }
 
-        /* Zone d'affichage de la photo choisi */
         .photo-section {
             display: flex;
             flex-direction: column;
@@ -152,7 +149,8 @@
         .photo-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Recadre proprement l'image */
+            object-fit: contain;
+            background-color: #020617;
         }
 
         .photo-caption {
@@ -194,16 +192,16 @@
                 <h2>Concevoir et modéliser l'architecture sur AutoCAD</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">À partir des plans guides du bureau d'études EGA, j'ai pris le relais pour toute la conception technique sur AutoCAD[cite: 262, 292, 559, 609]. J'ai découpé les zones de bureaux, tracé les liaisons logiques (Room Bus, boucles RPC) et configuré les polylines de câblage[cite: 611, 1004, 1005]. J'ai également géré l'extraction automatique des données vers Excel pour éliminer les erreurs de saisie[cite: 565, 566].</p>
+                <p class="desc-text">À partir des plans guides transmis par le bureau d'études EGA, j'ai pris en charge la structuration fine et la modélisation technique sur AutoCAD. Mon travail a consisté à découper les zones de bureaux, configurer les liaisons logiques (Room Bus, bus de terrain) et tracer le câblage d'exécution. J'ai ensuite réalisé l'extraction automatisée des listes de points vers Excel pour supprimer tout risque d'erreur humaine.</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">Cette phase d'étude m'a appris à adapter nos solutions techniques aux contraintes architecturales réelles du site[cite: 611]. Structurer proprement les fichiers dès le début permet de sécuriser toute la suite du déploiement sur le chantier[cite: 563, 612].</p>
+                <p class="desc-text">Cette phase d'étude préliminaire m'a appris l'importance d'une planification rigoureuse. Prendre le temps de valider graphiquement chaque boucle logique et chaque zonage permet d'anticiper les incohérences et de sécuriser toute la suite du déploiement technique sur le chantier.</p>
             </div>
             <div class="photo-section">
                 <div class="photo-wrapper">
-                    <img src="https://via.placeholder.com/400x250?text=Plan+AutoCAD+M+" alt="Preuve AutoCAD">
+                    <img src="img/autocad.png" alt="Preuve AutoCAD">
                 </div>
-                <p class="photo-caption">Figure 1 : Extrait du plan de zonage et tracé des liaisons sur AutoCAD (Niveau 3)[cite: 581, 611].</p>
+                <p class="photo-caption">Figure 1 : Extrait du plan d'implantation et tracé des liaisons réseaux d'étage sur AutoCAD.</p>
             </div>
         </div>
 
@@ -213,16 +211,16 @@
                 <h2>Mettre en service et valider le lot témoin du R+3</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">J'ai pris en charge la validation fonctionnelle complète du lot témoin (Lot B du R+3)[cite: 692, 693]. À l'aide du logiciel WorkStation d'EcoStruxure, j'ai déroulé les essais unitaires de terrain : appairage des luminaires (CLU) par flashage, forçage des stores (CS2), tests de présence (MUC) et vérification de la bascule d'état des contacts de fenêtres (COF)[cite: 708, 762, 763, 860, 862].</p>
+                <p class="desc-text">J'ai pris en charge la mise en service fonctionnelle et les essais unitaires complets sur le lot témoin (Lot B du R+3). Connecté à l'AS-P via la WorkStation Schneider Electric, j'ai exécuté l'ensemble des protocoles de test : appairage des luminaires (CLU) par flashage visuel, forçage de course des stores (CS2), détection des multi-capteurs (MUC) et contrôle de la bascule d'état des contacts d'ouverture de fenêtres (COF).</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">Le lot témoin est indispensable pour figer les solutions techniques avant le déploiement général[cite: 256, 693]. Cette phase m'a donné beaucoup de confiance en voyant la théorie se valider concrètement sur le terrain[cite: 973].</p>
+                <p class="desc-text">La validation d'un lot témoin est une étape stratégique pour valider et figer les solutions techniques avec le client avant d'industrialiser les tests à tout le bâtiment. Voir les configurations informatiques se traduire par des actions physiques concrètes sur les équipements de terrain a été très gratifiant.</p>
             </div>
             <div class="photo-section">
                 <div class="photo-wrapper">
-                    <img src="https://via.placeholder.com/400x250?text=WorkStation+EBO+Tests" alt="Preuve WorkStation">
+                    <img src="img/workstation.png" alt="Preuve WorkStation">
                 </div>
-                <p class="photo-caption">Figure 2 : Interface de test unitaire et recette des contacts COF en direct sur site[cite: 863, 924].</p>
+                <p class="photo-caption">Figure 2 : Recette fonctionnelle des variables et suivi des changements d'état sur la WorkStation.</p>
             </div>
         </div>
 
@@ -232,16 +230,16 @@
                 <h2>Résolution d'une rupture physique de boucle réseau RSTP</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">Lors d'un scan réseau sur un étage, un secteur complet de régulateurs RPC apparaissait hors-ligne[cite: 710]. Après investigation en faux-plafond, j'ai identifié une ouverture de la boucle de secours RSTP due à un câble RJ-45 trop court[cite: 711]. J'ai résolu le problème en ajoutant de manière autonome un coupleur femelle-femelle pour rétablir la continuité physique[cite: 712].</p>
+                <p class="desc-text">Lors des scans d'adressage réseau d'un étage, un ensemble de régulateurs RPC apparaissait hors-ligne sur le serveur. J'ai mené une investigation physique sur le terrain au niveau des chemins de câbles en faux-plafond et découvert un câble RJ-45 trop court et tendu qui s'était débranché. J'ai résolu le dysfonctionnement de manière autonome en posant un coupleur femelle-femelle pour rallonger la liaison proprement et refermer la boucle de secours RSTP.</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">Cette intervention curative m'a appris à gérer le stress face aux aléas directs du chantier, à être réactif et à mener un diagnostic méthodique sur un réseau de communication industriel[cite: 983].</p>
+                <p class="desc-text">Le chantier confronte directement le technicien aux imprévus. Ce dépannage curatif réussi en autonomie m'a appris à gérer le stress face aux aléas de production, à faire preuve d'esprit logique et à mener une démarche de diagnostic rigoureuse.</p>
             </div>
             <div class="photo-section">
                 <div class="photo-wrapper">
-                    <img src="https://via.placeholder.com/400x250?text=Coupleur+RJ45+Faux-plafond" alt="Preuve RSTP">
+                    <img src="img/coupleur.png" alt="Preuve RSTP">
                 </div>
-                <p class="photo-caption">Figure 3 : Zoom sur le coupleur femelle-femelle installé pour réparer la boucle RSTP d'étage[cite: 713].</p>
+                <p class="photo-caption">Figure 3 : Coupleur femelle-femelle installé en faux-plafond pour rétablir la communication réseau.</p>
             </div>
         </div>
 
@@ -251,39 +249,36 @@
                 <h2>Réaliser la préparation et la configuration du matériel</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">Pour préparer le déploiement de masse, j'ai configuré un banc d'essai en atelier relié à un serveur AS-P[cite: 671, 680]. J'ai effectué la mise à jour des firmwares des RPC vers la version V6 et l'attribution de leurs ID uniques[cite: 622, 682, 684]. En parallèle, j'ai structuré un outil Excel pour suivre les flux (réception, étiquetage, colisage par zone) et recenser les réserves de chantier[cite: 626, 627, 629, 938].</p>
+                <p class="desc-text">Pour préparer le déploiement massif sur le chantier, j'ai conçu et câblé un banc d'essai et de programmation en atelier relié à un serveur AS-P de test. J'ai assuré la migration logicielle de centaines de régulateurs RPC vers la version V6 et configuré leur adressage IP unique par étage. J'ai également développé un tableau Excel logistique pour suivre les flux de réception, l'étiquetage, le colisage et le cahier des réserves.</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">Gérer un tel flux d'équipements exige une organisation logistique sans faille[cite: 979]. Cela a optimisé mes méthodes de travail et renforcé ma communication avec mon tuteur et les électriciens sur site[cite: 980].</p>
+                <p class="desc-text">Manipuler d'importants volumes d'équipements industriels demande une rigueur organisationnelle absolue. Cette mission de préparation m'a permis de perfectionner ma méthodologie de gestion du parc matériel et a optimisé ma communication technique avec mon tuteur et les équipes d'installateurs.</p>
             </div>
             <div class="photo-section">
                 <div class="photo-wrapper">
-                    <img src="https://via.placeholder.com/400x250?text=Banc+Atelier+RPC" alt="Preuve Atelier">
+                    <img src="img/banc.png" alt="Preuve Atelier">
                 </div>
-                <p class="photo-caption">Figure 4 : Vue globale du banc d'essai d'atelier configuré pour les mises à jour en série[cite: 672, 678].</p>
+                <p class="photo-caption">Figure 4 : Configuration en série et chargement des micrologiciels sur le banc d'essai en atelier.</p>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>Mohamed-Wassim Boudaoud — Portfolio Évaluatif BUT3 GEII — 2026 [cite: 39, 1051]</p>
+        <p>Mohamed-Wassim Boudaoud — Portfolio Évaluatif BUT3 GEII — 2026</p>
     </footer>
 
     <script>
         function openComp(evt, compId) {
-            // Masquer tout le contenu
             const contents = document.getElementsByClassName("comp-content");
             for (let i = 0; i < contents.length; i++) {
                 contents[i].classList.remove("active");
             }
 
-            // Désactiver tous les onglets
             const tabs = document.getElementsByClassName("tab-btn");
             for (let i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove("active");
             }
 
-            // Afficher la compétence sélectionnée et activer l'onglet actuel
             document.getElementById(compId).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
