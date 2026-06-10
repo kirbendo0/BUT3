@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio BUT3 - Wassim Boudaoud</title>
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --accent-color: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-hight: 100vh;
+        }
+
+        header {
+            background-color: #020617;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        .subtitle { color: var(--accent-color); margin: 0.3rem 0 0 0; font-size: 1rem; }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Système d'onglets dynamiques */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+            border: 1px solid #334155;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            color: #fff;
+            border-color: var(--text-muted);
+        }
+
+        .tab-btn.active {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Contenu des compétences */
+        .comp-content {
+            display: none;
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .comp-content.active {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .comp-content.active {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .text-section h2 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 1.4rem;
+        }
+
+        .ac-badge {
+            display: inline-block;
+            background: #334155;
+            color: var(--accent-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .block-title {
+            font-weight: bold;
+            color: #10b981;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .desc-text {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: justify;
+            margin: 0;
+        }
+
+        /* Zone d'affichage de la photo choisi */
+        .photo-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid #334155;
+        }
+
+        .photo-wrapper {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #020617;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recadre proprement l'image */
+        }
+
+        .photo-caption {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: #020617;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mohamed-Wassim BOUDAOUD</h1>
+        <p class="subtitle">Bilan de Compétences BUT3 GEII — Pôle Smart Building (CALASYS)</p>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openComp(event, 'comp1')">1. CONCEVOIR</button>
+            <button class="tab-btn" onclick="openComp(event, 'comp2')">2. VÉRIFIER</button>
+            <button class="tab-btn" onclick="openComp(event, 'comp3')">3. MAINTENIR</button>
+            <button class="tab-btn" onclick="openComp(event, 'comp4')">4. INTÉGRER</button>
+        </div>
+
+        <div id="comp1" class="comp-content active">
+            <div class="text-section">
+                <span class="ac-badge">AC21.01 / AC31.02</span>
+                <h2>Concevoir et modéliser l'architecture sur AutoCAD</h2>
+                
+                <p class="block-title">✦ Démarche technique :</p>
+                <p class="desc-text">À partir des plans guides du bureau d'études EGA, j'ai pris le relais pour toute la conception technique sur AutoCAD[cite: 262, 292, 559, 609]. J'ai découpé les zones de bureaux, tracé les liaisons logiques (Room Bus, boucles RPC) et configuré les polylines de câblage[cite: 611, 1004, 1005]. J'ai également géré l'extraction automatique des données vers Excel pour éliminer les erreurs de saisie[cite: 565, 566].</p>
+                
+                <p class="block-title">✦ Recul professionnel :</p>
+                <p class="desc-text">Cette phase d'étude m'a appris à adapter nos solutions techniques aux contraintes architecturales réelles du site[cite: 611]. Structurer proprement les fichiers dès le début permet de sécuriser toute la suite du déploiement sur le chantier[cite: 563, 612].</p>
+            </div>
+            <div class="photo-section">
+                <div class="photo-wrapper">
+                    <img src="https://via.placeholder.com/400x250?text=Plan+AutoCAD+M+" alt="Preuve AutoCAD">
+                </div>
+                <p class="photo-caption">Figure 1 : Extrait du plan de zonage et tracé des liaisons sur AutoCAD (Niveau 3)[cite: 581, 611].</p>
+            </div>
+        </div>
+
+        <div id="comp2" class="comp-content">
+            <div class="text-section">
+                <span class="ac-badge">AC22.01 / AC32.03</span>
+                <h2>Mettre en service et valider le lot témoin du R+3</h2>
+                
+                <p class="block-title">✦ Démarche technique :</p>
+                <p class="desc-text">J'ai pris en charge la validation fonctionnelle complète du lot témoin (Lot B du R+3)[cite: 692, 693]. À l'aide du logiciel WorkStation d'EcoStruxure, j'ai déroulé les essais unitaires de terrain : appairage des luminaires (CLU) par flashage, forçage des stores (CS2), tests de présence (MUC) et vérification de la bascule d'état des contacts de fenêtres (COF)[cite: 708, 762, 763, 860, 862].</p>
+                
+                <p class="block-title">✦ Recul professionnel :</p>
+                <p class="desc-text">Le lot témoin est indispensable pour figer les solutions techniques avant le déploiement général[cite: 256, 693]. Cette phase m'a donné beaucoup de confiance en voyant la théorie se valider concrètement sur le terrain[cite: 973].</p>
+            </div>
+            <div class="photo-section">
+                <div class="photo-wrapper">
+                    <img src="https://via.placeholder.com/400x250?text=WorkStation+EBO+Tests" alt="Preuve WorkStation">
+                </div>
+                <p class="photo-caption">Figure 2 : Interface de test unitaire et recette des contacts COF en direct sur site[cite: 863, 924].</p>
+            </div>
+        </div>
+
+        <div id="comp3" class="comp-content">
+            <div class="text-section">
+                <span class="ac-badge">AC23.02 / AC32.02</span>
+                <h2>Résolution d'une rupture physique de boucle réseau RSTP</h2>
+                
+                <p class="block-title">✦ Démarche technique :</p>
+                <p class="desc-text">Lors d'un scan réseau sur un étage, un secteur complet de régulateurs RPC apparaissait hors-ligne[cite: 710]. Après investigation en faux-plafond, j'ai identifié une ouverture de la boucle de secours RSTP due à un câble RJ-45 trop court[cite: 711]. J'ai résolu le problème en ajoutant de manière autonome un coupleur femelle-femelle pour rétablir la continuité physique[cite: 712].</p>
+                
+                <p class="block-title">✦ Recul professionnel :</p>
+                <p class="desc-text">Cette intervention curative m'a appris à gérer le stress face aux aléas directs du chantier, à être réactif et à mener un diagnostic méthodique sur un réseau de communication industriel[cite: 983].</p>
+            </div>
+            <div class="photo-section">
+                <div class="photo-wrapper">
+                    <img src="https://via.placeholder.com/400x250?text=Coupleur+RJ45+Faux-plafond" alt="Preuve RSTP">
+                </div>
+                <p class="photo-caption">Figure 3 : Zoom sur le coupleur femelle-femelle installé pour réparer la boucle RSTP d'étage[cite: 713].</p>
+            </div>
+        </div>
+
+        <div id="comp4" class="comp-content">
+            <div class="text-section">
+                <span class="ac-badge">AC24.01 / AC34.02</span>
+                <h2>Réaliser la préparation et la configuration du matériel</h2>
+                
+                <p class="block-title">✦ Démarche technique :</p>
+                <p class="desc-text">Pour préparer le déploiement de masse, j'ai configuré un banc d'essai en atelier relié à un serveur AS-P[cite: 671, 680]. J'ai effectué la mise à jour des firmwares des RPC vers la version V6 et l'attribution de leurs ID uniques[cite: 622, 682, 684]. En parallèle, j'ai structuré un outil Excel pour suivre les flux (réception, étiquetage, colisage par zone) et recenser les réserves de chantier[cite: 626, 627, 629, 938].</p>
+                
+                <p class="block-title">✦ Recul professionnel :</p>
+                <p class="desc-text">Gérer un tel flux d'équipements exige une organisation logistique sans faille[cite: 979]. Cela a optimisé mes méthodes de travail et renforcé ma communication avec mon tuteur et les électriciens sur site[cite: 980].</p>
+            </div>
+            <div class="photo-section">
+                <div class="photo-wrapper">
+                    <img src="https://via.placeholder.com/400x250?text=Banc+Atelier+RPC" alt="Preuve Atelier">
+                </div>
+                <p class="photo-caption">Figure 4 : Vue globale du banc d'essai d'atelier configuré pour les mises à jour en série[cite: 672, 678].</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Mohamed-Wassim Boudaoud — Portfolio Évaluatif BUT3 GEII — 2026 [cite: 39, 1051]</p>
+    </footer>
+
+    <script>
+        function openComp(evt, compId) {
+            // Masquer tout le contenu
+            const contents = document.getElementsByClassName("comp-content");
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+
+            // Désactiver tous les onglets
+            const tabs = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            // Afficher la compétence sélectionnée et activer l'onglet actuel
+            document.getElementById(compId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
