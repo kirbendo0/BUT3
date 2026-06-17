@@ -35,7 +35,7 @@
         .subtitle { color: var(--accent-color); margin: 0.3rem 0 0 0; font-size: 1rem; }
 
         main {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 2rem auto;
             padding: 0 1rem;
             width: 100%;
@@ -86,9 +86,9 @@
             gap: 2rem;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 900px) {
             .comp-content.active {
-                grid-template-columns: 1.2fr 1fr;
+                grid-template-columns: 1fr 1.2fr;
             }
         }
 
@@ -124,20 +124,32 @@
             margin: 0;
         }
 
-        .photo-section {
+        /* Grille pour afficher 2 images */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        @media (min-width: 600px) {
+            .photo-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .photo-card {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             background: #0f172a;
             border-radius: 12px;
-            padding: 1rem;
+            padding: 0.8rem;
             border: 1px solid #334155;
         }
 
         .photo-wrapper {
             width: 100%;
-            height: 250px;
+            height: 180px;
             border-radius: 8px;
             overflow: hidden;
             background-color: #020617;
@@ -150,14 +162,14 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background-color: #020617;
         }
 
         .photo-caption {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            margin-top: 0.8rem;
+            margin-top: 0.6rem;
             text-align: center;
+            line-height: 1.3;
         }
 
         footer {
@@ -193,16 +205,20 @@
                 <h2>Concevoir et modéliser l'architecture sur AutoCAD</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">À partir des plans guides transmis par le bureau d'études EGA, j'ai pris en charge la structuration fine et la modélisation technique sur AutoCAD[cite: 8]. Mon travail a consisté à découper les zones de bureaux, configurer les liaisons logiques (Room Bus, bus de terrain) et tracer le câblage d'exécution[cite: 8]. J'ai ensuite réalisé l'extraction automatisée des listes de points vers Excel pour supprimer tout risque d'erreur humaine[cite: 8].</p>
+                <p class="desc-text">À partir des plans guides transmis par le bureau d'études EGA, j'ai pris en charge la structuration fine et la modélisation technique sur AutoCAD[cite: 7]. Mon travail a consisté à découper les zones de bureaux, configurer les liaisons logiques (Room Bus, bus de terrain) et tracer le câblage d'exécution[cite: 7]. J'ai ensuite réalisé l'extraction automatisée des listes de points vers Excel pour supprimer tout risque d'erreur humaine[cite: 7].</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">Cette phase d'étude préliminaire m'a appris l'importance d'une planification rigoureuse[cite: 8]. Prendre le temps de valider graphiquement chaque boucle logique et chaque zonage permet d'anticiper les incohérences et de sécuriser toute la suite du déploiement technique sur le chantier[cite: 8].</p>
+                <p class="desc-text">Cette phase d'étude préliminaire m'a appris l'importance d'une planification rigoureuse[cite: 7]. Prendre le temps de valider graphiquement chaque boucle logique et chaque zonage permet d'anticiper les incohérences et de sécuriser toute la suite du déploiement technique sur le chantier[cite: 7].</p>
             </div>
-            <div class="photo-section">
-                <div class="photo-wrapper">
-                    <img src="img/autocad.png" alt="Preuve AutoCAD">
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/autocad1.png" alt="Architecture type"></div>
+                    <p class="photo-caption">Preuve 1 : Modélisation théorique du synoptique réseau et du lot type d'un étage[cite: 7].</p>
                 </div>
-                <p class="photo-caption">Figure 1 : Extrait du plan d'implantation et tracé des liaisons réseaux d'étage sur AutoCAD[cite: 8].</p>
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/autocad2.png" alt="Plan exécution"></div>
+                    <p class="photo-caption">Preuve 2 : Extrait du plan d'implantation réel et tracé d'exécution des bus sur AutoCAD (Niveau 3)[cite: 7].</p>
+                </div>
             </div>
         </div>
 
@@ -213,16 +229,20 @@
                 <h2>Mettre en service et valider le lot témoin du R+3</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">J'ai pris en charge la mise en service fonctionnelle et les essais unitaires complets sur le lot témoin (Lot B du R+3)[cite: 8]. Connecté à l'AS-P via la WorkStation Schneider Electric, j'ai exécuté l'ensemble des protocoles de test : appairage des luminaires (CLU) par flashage visuel, forçage de course des stores (CS2), détection des multi-capteurs (MUC) et contrôle de la bascule d'état des contacts d'ouverture de fenêtres (COF)[cite: 8].</p>
+                <p class="desc-text">J'ai pris en charge la mise en service fonctionnelle et les essais unitaires complets sur le lot témoin (Lot B du R+3)[cite: 7]. Connecté à l'AS-P via la WorkStation Schneider Electric, j'ai exécuté l'ensemble des protocoles de test : appairage des luminaires (CLU) par flashage visuel, forçage de course des stores (CS2), détection des multi-capteurs (MUC) et contrôle de la bascule d'état des contacts d'ouverture de fenêtres (COF)[cite: 7].</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">La validation d'un lot témoin est une étape stratégique pour valider et figer les solutions techniques avec le client avant d'industrialiser les tests à tout le bâtiment[cite: 8]. Voir les configurations informatiques se traduire par des actions physiques concrètes sur les équipements de terrain a été très gratifiant[cite: 8].</p>
+                <p class="desc-text">La validation d'un lot témoin est une étape stratégique pour valider et figer les solutions techniques avec le client avant d'industrialiser les tests à tout le bâtiment[cite: 7]. Voir les configurations informatiques se traduire par des actions physiques concrètes sur les équipements de terrain a été très gratifiant[cite: 7].</p>
             </div>
-            <div class="photo-section">
-                <div class="photo-wrapper">
-                    <img src="img/workstation.png" alt="Preuve WorkStation">
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/workstation1.png" alt="Téléchargement applications"></div>
+                    <p class="photo-caption">Preuve 1 : Téléchargement massif des objets et applications de régulation dans les modules RPC[cite: 7].</p>
                 </div>
-                <p class="photo-caption">Figure 2 : Recette fonctionnelle des variables et suivi des changements d'état sur la WorkStation[cite: 8].</p>
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/workstation2.png" alt="Recette COF"></div>
+                    <p class="photo-caption">Preuve 2 : Interface de recette et remontée en direct des changements d'états des contacts de fenêtres[cite: 7].</p>
+                </div>
             </div>
         </div>
 
@@ -233,16 +253,20 @@
                 <h2>Résolution d'une rupture physique de boucle réseau RSTP</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">Lors des scans d'adressage réseau d'un étage, un ensemble de régulateurs RPC apparaissait hors-ligne sur le serveur[cite: 8]. J'ai mené une investigation physique sur le terrain au niveau des chemins de câbles en faux-plafond et découvert un câble RJ-45 trop court et tendu qui s'était débranché[cite: 8]. J'ai résolu le dysfonctionnement de manière autonome en posant un coupleur femelle-femelle pour rallonger la liaison proprement et refermer la boucle de secours RSTP[cite: 8].</p>
+                <p class="desc-text">Lors des scans d'adressage réseau d'un étage, un ensemble de régulateurs RPC apparaissait hors-ligne sur le serveur[cite: 7]. J'ai mené une investigation physique sur le terrain au niveau des chemins de câbles en faux-plafond et découvert un câble RJ-45 trop court et tendu qui s'était débranché[cite: 7]. J'ai résolu le dysfonctionnement de manière autonome en posant un coupleur femelle-femelle pour rallonger la liaison proprement et refermer la boucle de secours RSTP[cite: 7].</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">Le chantier confronte directement le technicien aux imprévus[cite: 8]. Ce dépannage curatif réussi en autonomie m'a appris à gérer le stress face aux aléas de production, à faire preuve d'esprit logique et à mener une démarche de diagnostic rigoureuse[cite: 8].</p>
+                <p class="desc-text">Le chantier confronte directement le technicien aux imprévus[cite: 7]. Ce dépannage curatif réussi en autonomie m'a appris à gérer le stress face aux aléas de production, à faire preuve d'esprit logique et à mener une démarche de diagnostic rigoureuse[cite: 7].</p>
             </div>
-            <div class="photo-section">
-                <div class="photo-wrapper">
-                    <img src="img/coupleur.png" alt="Preuve RSTP">
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/coupleur1.png" alt="Synoptique RSTP"></div>
+                    <p class="photo-caption">Preuve 1 : Schéma d'ingénierie de la boucle de redondance RSTP interconnectant les switchs[cite: 7].</p>
                 </div>
-                <p class="photo-caption">Figure 3 : Coupleur femelle-femelle installé en faux-plafond pour rétablir la communication réseau[cite: 8].</p>
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/coupleur2.png" alt="Photo coupleur"></div>
+                    <p class="photo-caption">Preuve 2 : Photo terrain de l'intégration du coupleur femelle-femelle en faux-plafond[cite: 7].</p>
+                </div>
             </div>
         </div>
 
@@ -253,16 +277,20 @@
                 <h2>Réaliser la préparation et la configuration du matériel</h2>
                 
                 <p class="block-title">✦ Démarche technique :</p>
-                <p class="desc-text">Pour préparer le déploiement massif sur le chantier, j'ai conçu et câblé un banc d'essai et de programmation en atelier relié à un serveur AS-P de test[cite: 8]. J'ai assuré la migration logicielle de centaines de régulateurs RPC vers la version V6 et configuré leur adressage IP unique par étage[cite: 8]. J'ai également développé un tableau Excel logistique pour suivre les flux de réception, l'étiquetage, le colisage et le cahier des réserves[cite: 8].</p>
+                <p class="desc-text">Pour préparer le déploiement massif sur le chantier, j'ai conçu et câblé un banc d'essai et de programmation en atelier relié à un serveur AS-P de test[cite: 7]. J'ai assuré la migration logicielle de centaines de régulateurs RPC vers la version V6 et configuré leur adressage IP unique par étage[cite: 7]. J'ai également développé un tableau Excel logistique pour suivre les flux de réception, l'étiquetage, le colisage et le cahier des réserves[cite: 7].</p>
                 
                 <p class="block-title">✦ Recul professionnel :</p>
-                <p class="desc-text">Manipuler d'importants volumes d'équipements industriels demande une rigueur organisationnelle absolue[cite: 8]. Cette mission de préparation m'a permis de perfectionner ma méthodologie de gestion du parc matériel et a optimisé ma communication technique avec mon tuteur et les équipes d'installateurs[cite: 8].</p>
+                <p class="desc-text">Manipuler d'importants volumes d'équipements industriels demande une rigueur organisationnelle absolue[cite: 7]. Cette mission de préparation m'a permis de perfectionner ma méthodologie de gestion du parc matériel et a optimisé ma communication technique avec mon tuteur et les équipes d'installateurs[cite: 7].</p>
             </div>
-            <div class="photo-section">
-                <div class="photo-wrapper">
-                    <img src="img/banc.png" alt="Preuve Atelier">
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/banc1.png" alt="Tableau logistique"></div>
+                    <p class="photo-caption">Preuve 1 : Tableau Excel de pilotage de production et de colisage du matériel par zone[cite: 7].</p>
                 </div>
-                <p class="photo-caption">Figure 4 : Configuration en série et chargement des micrologiciels sur le banc d'essai en atelier[cite: 8].</p>
+                <div class="photo-card">
+                    <div class="photo-wrapper"><img src="img/banc2.png" alt="Banc d'atelier"></div>
+                    <p class="photo-caption">Preuve 2 : Vue globale du banc d'essai d'atelier configuré pour les mises à jour en série V6[cite: 7].</p>
+                </div>
             </div>
         </div>
     </main>
